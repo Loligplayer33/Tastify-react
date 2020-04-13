@@ -13,7 +13,7 @@ const recipeAmount = 'to=30';
 // const calories = '';
 // const time = '';
 
-export default class Search {
+class Search {
   constructor(query) {
     this.query = query;
   }
@@ -29,3 +29,5 @@ export default class Search {
     }
   }
 }
+
+export default Search;

@@ -1,17 +1,24 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import '../scss/home.scss';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Search from '../Api/Search';
 
 function Home() {
   const [input, setInput] = useState('');
+  const [query, setQuery] = useState({});
 
-  function searchResults(query) {
+  async function handleQuery(key) {
+    if (key.which == 13) {
+      console.log('mhh');
+      var query = await new Search(input).getResults();
+      setQuery(query);
+    }
+  }
+
+  useEffect(() => {
     console.log(query);
-  }
-
-  function handleClick(e) {
-    console.log(e);
-  }
+  }, [query]);
 
   return (
     <div className="home">
@@ -22,14 +29,18 @@ function Home() {
             className="home__input"
             type="text"
             placeholder="f.e: Pizza, Lasagna, Salad"
-            onKeyPress={(e) => {
+            onKeyDown={(e) => {
               setInput(e.target.value);
-              handleClick(e.keyCode);
+              handleQuery(e);
             }}
           />
+
+          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
           <i
             className="home__search-icon fas fa-search fa-2x"
-            onClick={searchResults(input)}
+            onClick={() => {
+              console.log(input);
+            }}
           ></i>
         </div>
       </div>
