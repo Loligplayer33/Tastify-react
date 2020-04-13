@@ -1,0 +1,102 @@
+@import 'utilities';
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 3px 10px -2px $background-color-dark;
+
+  &-logo--container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+    margin-left: 5%;
+  }
+
+  &__logo {
+    color: green;
+    font-size: 6rem;
+
+    &:hover {
+      color: $font-color-btn-color-hover;
+    }
+  }
+
+  &__link {
+    font-size: 1.7rem;
+    padding: 1.5rem 0;
+
+    // implementing hover animation
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: $font-color-btn-color-hover;
+    }
+
+    &--middle {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        text-align: center;
+        // to make line not to long
+        width: 110%;
+        height: 3px;
+        bottom: 0;
+        // to get line back in the middle
+        left: -5%;
+        background-color: $btn-color-secondary;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__link--btn {
+    color: $font-color-bright;
+    background-color: $font-color-btn-color;
+    padding: 2rem 2.5rem;
+    border-radius: 3px;
+    transition: all 0.25s;
+
+    &:hover {
+      color: $font-color-main;
+      background-color: $btn-color-secondary;
+    }
+  }
+
+  &__toggle-search {
+    // toggle on search icon click
+    display: none;
+
+    // normal styling
+    outline: none;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: 2rem;
+    height: 60px;
+    width: 600px;
+    background-color: $background-color-light;
+    padding-left: 1rem;
+    border: 2px solid $background-color-dark;
+    transition: all 0.15s;
+    margin-left: 1.5rem;
+
+    &:hover {
+      border-color: $font-color-btn-color;
+    }
+
+    &:focus {
+      color: $font-color-btn-color;
+      border-color: $font-color-btn-color;
+    }
+  }
+}

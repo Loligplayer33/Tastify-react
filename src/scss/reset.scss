@@ -1,0 +1,65 @@
+@import 'utilities';
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: $font-family-main;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+::placeholder {
+  opacity: 0.2;
+  padding-left: 1rem;
+  font-family: $font-family-special;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input:focus {
+  font-size: 2.5rem;
+}
+
+input {
+  font-family: $font-family-special;
+}
+
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  color: $font-color-btn-color;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
