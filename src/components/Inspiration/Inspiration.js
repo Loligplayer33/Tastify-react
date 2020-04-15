@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './inspiration.module.scss';
 
-console.log(styles);
-
 function Inspiration() {
   return (
     <div className={styles.container}>

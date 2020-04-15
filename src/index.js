@@ -15,6 +15,7 @@ import Newsletter from './components/Newsletter/Newsletter';
 import Connect from './components/Connect/Connect';
 import Footer from './components/Footer/Footer';
 import ProcessSearch from './components/Search/ProcessSearch';
+import RecipeOTD from './components/RecipeOfTheDay/RecipeOTD';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Newsletter path="newsletter" />
         <Connect path="connect" />
         <ProcessSearch path="search" />
+        <RecipeOTD path="recipeOfTheDay" />
       </Router>
       <Footer />
     </div>

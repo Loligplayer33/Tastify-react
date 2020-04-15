@@ -73,6 +73,12 @@
     }
   }
 
+  &__search {
+    &:hover {
+      color: gray;
+    }
+  }
+
   &__toggle-search {
     // toggle on search icon click
     display: none;

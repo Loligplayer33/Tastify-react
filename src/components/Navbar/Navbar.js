@@ -8,7 +8,7 @@ function Navbar() {
 
   // set state for controlDomOnClick
   function isClicked() {
-    click == false ? setClick(true) : setClick(false);
+    click === false ? setClick(true) : setClick(false);
     controlDomOnClick(click);
   }
 
@@ -17,11 +17,11 @@ function Navbar() {
     var navbar = document.querySelector('.nav');
     var toggleInput = document.querySelector('.nav__toggle-search');
 
-    if (click == false) {
+    if (click === false) {
       navbar.style.justifyContent = 'left';
       toggleInput.style.display = 'block';
       links.forEach((link) => (link.style.display = 'none'));
-    } else if (click == true) {
+    } else if (click === true) {
       links.forEach((link) => (link.style.display = 'block'));
       navbar.style.justifyContent = 'space-around';
       toggleInput.style.display = 'none';
