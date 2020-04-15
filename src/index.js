@@ -1,5 +1,4 @@
 // scss imports
-import './scss/main.scss';
 import './scss/reset.scss';
 
 // external Imports
@@ -8,13 +7,14 @@ import { render } from 'react-dom';
 import { Router } from '@reach/router';
 
 // module imports
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Recipes from './components/Recipes';
-import Inspiration from './components/Inspiration';
-import Newsletter from './components/Newsletter';
-import Connect from './components/Connect';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import Recipes from './components/Recipes/Recipes';
+import Inspiration from './components/Inspiration/Inspiration';
+import Newsletter from './components/Newsletter/Newsletter';
+import Connect from './components/Connect/Connect';
+import Footer from './components/Footer/Footer';
+import ProcessSearch from './components/Search/ProcessSearch';
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
         <Inspiration path="inspiration" />
         <Newsletter path="newsletter" />
         <Connect path="connect" />
+        <ProcessSearch path="search" />
       </Router>
       <Footer />
     </div>

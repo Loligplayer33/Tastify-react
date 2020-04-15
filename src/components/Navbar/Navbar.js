@@ -1,4 +1,4 @@
-import '../scss/navbar.scss';
+import './navbar.scss';
 
 import React, { useState } from 'react';
 import { Link } from '@reach/router';

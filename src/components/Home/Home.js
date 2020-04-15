@@ -1,25 +1,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import '../scss/home.scss';
+import './home.scss';
+import ProcessSearch from '../Search/ProcessSearch';
 
-import React, { useState, useEffect } from 'react';
-import Search from '../Api/Search';
+import React from 'react';
 
 function Home() {
-  const [input, setInput] = useState('');
-  const [query, setQuery] = useState({});
-
-  async function handleQuery(key) {
-    if (key.which == 13) {
-      console.log('mhh');
-      var query = await new Search(input).getResults();
-      setQuery(query);
-    }
-  }
-
-  useEffect(() => {
-    console.log(query);
-  }, [query]);
-
   return (
     <div className="home">
       <div className="home__img-container">
@@ -30,17 +15,16 @@ function Home() {
             type="text"
             placeholder="f.e: Pizza, Lasagna, Salad"
             onKeyDown={(e) => {
-              setInput(e.target.value);
-              handleQuery(e);
+              // TODO problem by calling hook inside event handler (qusetion)
+              ProcessSearch(e);
             }}
           />
 
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
           <i
             className="home__search-icon fas fa-search fa-2x"
-            onClick={() => {
-              console.log(input);
-            }}
+            // TODO add search functionality
+            onClick={() => {}}
           ></i>
         </div>
       </div>
