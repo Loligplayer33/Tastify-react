@@ -3,7 +3,8 @@ import styles from './home.module.scss';
 
 import React from 'react';
 
-import ProcessSearch from '../Search/ProcessSearch';
+// import ProcessSearch from '../Search/ProcessSearch';
+import HomeInput from './HomeInput';
 import RecipeCard from './RecipeCard';
 
 function Home() {
@@ -29,28 +30,8 @@ function Home() {
     <div>
       <div className={styles.container}>
         <h1 className={styles.header}>We got everything you need</h1>
-        <div className={styles.inputContainer}>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="f.e: Pizza, Lasagna, Salad"
-            onKeyDown={(e) => {
-              if (e.which == 13) {
-                <ProcessSearch event={e} />;
-              }
-            }}
-          />
 
-          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-          <i
-            className={`${styles.icon} fas fa-search fa-2x`}
-            onClick={(e) => {
-              if (e.type == 'click') {
-                <ProcessSearch event={e} />;
-              }
-            }}
-          ></i>
-        </div>
+        <HomeInput />
       </div>
       <h1 className={styles.cardHeading}>There is magic in the making</h1>
       <div className={styles.cardSection}>
