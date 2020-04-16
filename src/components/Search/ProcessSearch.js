@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Search from './apiSearch';
 
-function ProcessSearch(e) {
+function ProcessSearch(props) {
   const [query, setQuery] = useState({});
 
-  if (e.which == 13) {
+  // && e.value !== undefined
+  if (props.event.which == 13 || props.event.type === 'click') {
     updateQueryState();
   }
 
   async function updateQueryState() {
-    let query = await new Search(e.value).getResults();
+    let query = await new Search(props.event.value).getResults();
     setQuery(query);
   }
 

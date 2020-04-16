@@ -3,6 +3,10 @@ import './navbar.scss';
 import React, { useState } from 'react';
 import { Link } from '@reach/router';
 
+import ProcessSearch from '../Search/ProcessSearch';
+
+// TODO do this with classes (reference slack)
+
 function Navbar() {
   const [click, setClick] = useState(false);
 
@@ -62,7 +66,9 @@ function Navbar() {
         }}
         onClick={(e) => {
           isClicked(e);
-          console.log(e.target);
+          if (e.type == 'click') {
+            <ProcessSearch event={e} />;
+          }
         }}
         onBlur={(e) => {
           isClicked(e);
@@ -72,6 +78,11 @@ function Navbar() {
         className="nav__toggle-search input-field"
         type="text"
         placeholder="f.e: Pizza, Lasagna, Salad"
+        onChange={(e) => {
+          if (e.which == 13) {
+            <ProcessSearch event={e} />;
+          }
+        }}
       />
     </nav>
   );

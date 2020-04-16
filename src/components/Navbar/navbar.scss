@@ -74,8 +74,18 @@
   }
 
   &__search {
+    border-left: 2px solid $background-color-dark;
+    padding-left: 2rem;
+    font-size: 2.3rem;
     &:hover {
       color: gray;
+    }
+  }
+
+  &.clicked {
+    .nav__link--btn,
+    .nav__link {
+      margin: 0 2.5rem;
     }
   }
 

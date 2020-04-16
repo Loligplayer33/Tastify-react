@@ -35,16 +35,20 @@ function Home() {
             type="text"
             placeholder="f.e: Pizza, Lasagna, Salad"
             onKeyDown={(e) => {
-              // TODO problem by calling hook inside event handler (qusetion)
-              ProcessSearch(e);
+              if (e.which == 13) {
+                <ProcessSearch event={e} />;
+              }
             }}
           />
 
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
           <i
-            className={(styles.icon, 'fas fa-search fa-2x')}
-            // TODO add search functionality
-            onClick={() => {}}
+            className={`${styles.icon} fas fa-search fa-2x`}
+            onClick={(e) => {
+              if (e.type == 'click') {
+                <ProcessSearch event={e} />;
+              }
+            }}
           ></i>
         </div>
       </div>
