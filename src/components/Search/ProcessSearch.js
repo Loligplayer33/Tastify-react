@@ -5,7 +5,7 @@ function ProcessSearch(props) {
   const [query, setQuery] = useState({});
 
   // && e.value !== undefined
-  if (props.event.which == 13 || props.event.type === 'click') {
+  if (props.event.which === 13 || props.event.type === 'click') {
     updateQueryState();
   }
 

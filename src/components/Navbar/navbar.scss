@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem;
-  box-shadow: 0 3px 10px -2px $background-color-dark;
+  padding: 2.5rem;
+  box-shadow: 0 10px 10px -2px $background-color-dark;
 
   &-logo--container {
     display: flex;
@@ -24,7 +24,7 @@
   }
 
   &__link {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     padding: 1.5rem 0;
 
     // implementing hover animation
@@ -73,19 +73,17 @@
     }
   }
 
+  &__search-container {
+    display: flex;
+    align-items: center;
+  }
+
   &__search {
     border-left: 2px solid $background-color-dark;
     padding-left: 2rem;
     font-size: 2.3rem;
     &:hover {
       color: gray;
-    }
-  }
-
-  &.clicked {
-    .nav__link--btn,
-    .nav__link {
-      margin: 0 2.5rem;
     }
   }
 

@@ -1,0 +1,63 @@
+@import '../../scss/utilities';
+
+.container {
+  background: rgb(35, 151, 83);
+  background: linear-gradient(
+    60deg,
+    rgba(28, 121, 67, 1) 0% rgba(35, 151, 83, 1) 100%
+  );
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15rem;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 3%;
+}
+
+.copy {
+  font-size: 1.5rem;
+  color: #fff;
+  // margin-right: 2rem;
+  padding-right: 4rem;
+  border-right: 2px solid $background-color-dark;
+}
+
+.link {
+  font-size: 1.5rem;
+  color: #fff;
+  padding-left: 3rem;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $btn-color-secondary;
+  }
+}
+
+.socialContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 4rem;
+}
+
+.social {
+  color: #fff;
+  font-size: 2.5rem;
+  border: 2.5px solid white;
+  padding: 1rem;
+  border-radius: 50%;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $btn-color-secondary;
+    color: #000;
+  }
+}

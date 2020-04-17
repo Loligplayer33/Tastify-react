@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import './navbar.scss';
 
 function NavInput({ onSearch }) {
   const [click, setClick] = useState(false);
   const [term, setTerm] = useState('');
+
+  function removeTextContent(e) {
+    e.target.value = '';
+    console.log(e);
+  }
 
   // set state for controlDomOnClick
   function isClicked() {
@@ -18,39 +24,43 @@ function NavInput({ onSearch }) {
     if (click === false) {
       navbar.style.justifyContent = 'left';
       toggleInput.style.display = 'block';
-      links.forEach(link => (link.style.display = 'none'));
+      links.forEach((link) => (link.style.display = 'none'));
     } else if (click === true) {
-      links.forEach(link => (link.style.display = 'block'));
+      links.forEach((link) => (link.style.display = 'block'));
       navbar.style.justifyContent = 'space-around';
       toggleInput.style.display = 'none';
     }
   }
 
   return (
-    <div>
+    <div className="nav__search-container">
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <i
         className="nav__search fas fa-search fa-2x"
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           isClicked(e);
           onSearch(term);
+          removeTextContent(e);
         }}
-        onClick={e => {
+        onClick={(e) => {
           isClicked(e);
           onSearch(term);
+          removeTextContent(e);
         }}
-        onBlur={e => {
+        onBlur={(e) => {
           isClicked(e);
           onSearch(term);
+          removeTextContent(e);
         }}
       />
       <input
         className="nav__toggle-search input-field"
         type="text"
         placeholder="f.e: Pizza, Lasagna, Salad"
-        onChange={e => {
+        onKeyDown={(e) => {
           if (e.which === 13) {
             onSearch(term);
+            removeTextContent(e);
           } else {
             setTerm(e.target.value);
           }

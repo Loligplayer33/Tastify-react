@@ -4,12 +4,13 @@ import { Link } from '@reach/router';
 import s from './recipeCard.module.scss';
 
 function RecipeCard(props) {
+  console.log(props);
   return (
     <div className={s.card}>
       {/* img link to the seperate pages */}
-      <Link to={props.link}>
-        <img className={s.img} src={props.img} alt="recipe" />
-      </Link>
+      {/* <Link to={props.link}> */}
+      <img className={s.img} src={props.img} alt="recipe" />
+      {/* </Link> */}
       <div className={s.contentContainer}>
         <h2 className={s.heading}>{props.heading}</h2>
         <p className={s.content}>{props.content}</p>
