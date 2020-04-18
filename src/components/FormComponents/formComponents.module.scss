@@ -1,0 +1,111 @@
+@import '../../scss/utilities';
+
+.containerLeft {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: inherit;
+}
+
+.heading {
+  margin-top: 9rem;
+  font-size: 9rem;
+  margin-bottom: 5rem;
+  // has to change in heading too
+  padding-left: 5rem;
+  font-family: $font-family-special;
+}
+
+.content {
+  font-size: 1.7rem;
+  margin: 2rem;
+  padding-right: 15rem;
+  // has to change in heading too
+  padding-left: 5rem;
+}
+
+.containerRight {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  height: fit-content;
+  background: url('../../assets/contact-form.jpg');
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+
+.form {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  opacity: 1;
+}
+
+.input {
+  border-radius: 3px;
+  border: 1px solid gray;
+  background-color: #48646bee;
+  height: 60px;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  color: $background-color-light;
+  opacity: 1;
+  font-family: $font-family-main;
+
+  &:focus {
+    font-size: 1.6rem;
+    border-color: $font-color-btn-color-hover;
+  }
+}
+
+.textareaContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: $background-color-light;
+}
+
+.textarea {
+  background-color: #48646bee;
+  width: 210%;
+}
+.button {
+  height: 5rem;
+  width: 200px;
+  font-size: 1.7rem;
+  background-color: $font-color-btn-color;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 0.2s;
+  cursor: pointer;
+  // to postion btn in middle
+  margin-left: calc(50% - 100px);
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+
+  &:hover {
+    background-color: $btn-color-secondary;
+    color: #000;
+  }
+
+  &:focus {
+    font-size: 1.7rem;
+  }
+}

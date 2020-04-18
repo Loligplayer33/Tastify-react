@@ -1,0 +1,11 @@
+.container {
+  min-height: 70vh;
+  height: fit-content;
+  max-width: 1440px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
