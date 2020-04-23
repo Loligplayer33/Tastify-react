@@ -1,11 +1,14 @@
+@import '../../scss/utilities';
+@import '../../scss/reset';
+
 .container {
-  min-height: 70vh;
+  min-height: 61vh;
   height: fit-content;
   max-width: 1440px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
   overflow: hidden;
 }

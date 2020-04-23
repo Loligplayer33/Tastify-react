@@ -19,7 +19,8 @@ function Navbar() {
       <div className="nav-logo--container">
         {/* {route to main page} */}
         <Link to="/">
-          <i className="nav__logo fas fa-utensils fa-5x">Tastify</i>
+          {/* <i className="nav__logo fas fa-utensils fa-5x">Tastify</i> */}
+          <h1 className="nav__logo">Tastify</h1>
         </Link>
       </div>
       {/* route to the pages */}

@@ -9,6 +9,10 @@ import RecipeCard from './RecipeCard';
 import Search from '../Search/apiSearch';
 import cardContent from '../StaticData/DataHome';
 
+import imgRecipe from '../../assets/home-a__recipe.jpg';
+import imgRecipeOTD from '../../assets/home-a__recipe-of-the-day.jpg';
+import imgInspiration from '../../assets/home-a__inspiration.jpg';
+
 function Home() {
   async function onSearch(term) {
     if (term !== '' || undefined) {
@@ -26,21 +30,21 @@ function Home() {
       <h1 className={styles.cardHeading}>There is magic in the making</h1>
       <div className={styles.cardSection}>
         <RecipeCard
-          img={cardContent.imgRecipe}
+          img={imgRecipe}
           link={cardContent.linkToRecipes}
           content={cardContent.recipesTxt}
           heading={cardContent.recipesHeading}
           btnContent="Browse recipes"
         />
         <RecipeCard
-          img={cardContent.imgRecipeOTD}
+          img={imgRecipeOTD}
           link={cardContent.linkToRecipeOTD}
           content={cardContent.pickOfTheDayTxt}
           heading={cardContent.recipeOTDHeading}
           btnContent="Take a look"
         />
         <RecipeCard
-          img={cardContent.imgInspiration}
+          img={imgInspiration}
           link={cardContent.linkToInspiration}
           content={cardContent.inspirationTxt}
           heading={cardContent.inspirationHeading}

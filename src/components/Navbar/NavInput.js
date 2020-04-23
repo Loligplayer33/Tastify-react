@@ -7,7 +7,6 @@ function NavInput({ onSearch }) {
 
   function removeTextContent(e) {
     e.target.value = '';
-    console.log(e);
   }
 
   // set state for controlDomOnClick

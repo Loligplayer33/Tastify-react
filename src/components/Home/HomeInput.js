@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import styles from './home.module.scss';
+
 function HomeInput({ onSearch }) {
   const [term, setTerm] = useState('');
 
@@ -16,7 +17,7 @@ function HomeInput({ onSearch }) {
         placeholder="f.e: Pizza, Lasagna, Salad"
         onKeyDown={(e) => {
           if (e.which === 13) {
-            //onSearch fn coming from home.js calling api | term = input query
+            //onSearch fn coming from home.js calling api | term = input-query
             onSearch(term);
             removeTextContent(e);
           } else {

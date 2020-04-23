@@ -1,11 +1,16 @@
+import React from 'react';
+import { Redirect } from '@reach/router';
+
+// import Home from '../Home/Home';
+
 // This file handles to Edamam API to return the search Results
 import axios from 'axios';
 
 // TODO changes prob necessary
-const BASE_URL = 'https://api.edamam.com/search?';
-const app_id = '16803a76';
-const app_key = '3d257a8c2e5ceca228c8a15d1dba31bd';
-const recipeAmount = 'to=30';
+const BASE_URL = 'https://api.spoonacular.com/recipes/search';
+const apiKey = '5e5c37bdaec64ebb8bb2f7feb9b6ff27';
+const instructionRequired = 'true';
+const recipeAmount = '20';
 // these tags have to be set manually by user / GUI
 // const diet = '';
 // const cuisineType = '';
@@ -13,20 +18,28 @@ const recipeAmount = 'to=30';
 // const calories = '';
 // const time = '';
 
-class Search {
+class Search extends React.Component {
   constructor(query) {
+    super(query);
     this.query = query;
   }
 
   async getResults() {
     try {
       const data = await axios.get(
-        `${BASE_URL}q=${this.query}&app_id=${app_id}&app_key=${app_key}&${recipeAmount}`
+        `${BASE_URL}?query=${this.query}&apiKey=${apiKey}&instructionsRequired=${instructionRequired}&number=${recipeAmount}`
       );
-      console.log(data.data.hits);
+      console.log(data);
+      return data;
     } catch (err) {
       console.log(err);
+      // TODO add a default redirect to home (<Home default />)
     }
+  }
+
+  render() {
+    // TODO doesn't work properly
+    return <Redirect to="search" />;
   }
 }
 

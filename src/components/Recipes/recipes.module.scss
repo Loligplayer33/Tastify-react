@@ -1,0 +1,43 @@
+@import '../../scss/utilities';
+@import '../../scss/reset';
+
+.container {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 5rem;
+  margin-top: 4rem;
+}
+
+.heading {
+  margin: 2rem;
+  margin-bottom: 1.25rem;
+  font-size: 4rem;
+  font-family: $font-family-special;
+  transition: all 0.3s ease-in-out;
+}
+
+.borderBottom {
+  margin: auto;
+  width: 10%;
+  height: 5px;
+  border-bottom: 2px solid $btn-color-secondary;
+}
+
+.content {
+  margin-top: 2.5rem;
+  display: inline-block;
+  font-size: 2rem;
+  color: rgb(110, 110, 110);
+}
+
+.recipesContainer {
+  max-width: 1440px;
+  display: grid;
+  gap: 6rem;
+  padding: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 10rem;
+  margin: auto;
+}

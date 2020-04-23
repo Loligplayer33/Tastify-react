@@ -11,9 +11,6 @@ var cardContent = {
   linkToRecipes: 'recipes',
   linkToRecipeOTD: 'recipeOfTheDay',
   linkToInspiration: 'inspiration',
-  imgRecipe: '../../assets/home-a__recipe.jpg',
-  imgRecipeOTD: '../../assets/home-a__recipe-of-the-day.jpg',
-  imgInspiration: '../../assets/home-a__inspiration.jpg'
 };
 
 export default cardContent;

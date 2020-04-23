@@ -1,6 +1,7 @@
 @import 'utilities';
 
-html {
+html,
+body {
   box-sizing: border-box;
   font-size: 10px;
   font-family: $font-family-main;
