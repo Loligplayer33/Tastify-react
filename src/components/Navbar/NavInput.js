@@ -36,7 +36,7 @@ function NavInput({ onSearch }) {
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <i
         className="nav__search fas fa-search fa-2x"
-        onKeyDown={(e) => {
+        onKeyPress={(e) => {
           isClicked(e);
           onSearch(term);
           removeTextContent(e);
@@ -56,7 +56,7 @@ function NavInput({ onSearch }) {
         className="nav__toggle-search input-field"
         type="text"
         placeholder="f.e: Pizza, Lasagna, Salad"
-        onKeyDown={(e) => {
+        onKeyPress={(e) => {
           if (e.which === 13) {
             onSearch(term);
             removeTextContent(e);

@@ -1,16 +1,14 @@
 import './navbar.scss';
 
+import { navigate } from '@reach/router';
 import React from 'react';
 import { Link } from '@reach/router';
-import Search from '../Search/apiSearch';
 import NavInput from './NavInput';
-
-// TODO do this with classes (reference slack)
 
 function Navbar() {
   async function onSearch(term) {
     if (term !== '' || undefined) {
-      await new Search(term).getResults();
+      navigate(`searchResults?term=${term}`);
     }
   }
 

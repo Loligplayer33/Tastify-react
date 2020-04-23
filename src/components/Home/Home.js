@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import styles from './home.module.scss';
 
+import { navigate } from '@reach/router';
 import React from 'react';
 
 // import ProcessSearch from '../Search/ProcessSearch';
 import HomeInput from './HomeInput';
 import RecipeCard from './RecipeCard';
-import Search from '../Search/apiSearch';
 import cardContent from '../StaticData/DataHome';
 
 import imgRecipe from '../../assets/home-a__recipe.jpg';
@@ -16,7 +16,7 @@ import imgInspiration from '../../assets/home-a__inspiration.jpg';
 function Home() {
   async function onSearch(term) {
     if (term !== '' || undefined) {
-      await new Search(term).getResults();
+      navigate(`searchResults?term=${term}`);
     }
   }
 

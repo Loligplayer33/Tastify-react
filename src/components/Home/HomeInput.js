@@ -15,7 +15,7 @@ function HomeInput({ onSearch }) {
         className={styles.input}
         type="text"
         placeholder="f.e: Pizza, Lasagna, Salad"
-        onKeyDown={(e) => {
+        onKeyPress={(e) => {
           if (e.which === 13) {
             //onSearch fn coming from home.js calling api | term = input-query
             onSearch(term);

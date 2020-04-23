@@ -16,6 +16,7 @@ import Connect from './components/Connect/Connect';
 import Footer from './components/Footer/Footer';
 import ProcessSearch from './components/Search/ProcessSearch';
 import RecipeOTD from './components/RecipeOfTheDay/RecipeOTD';
+import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Connect path="connect" />
         <ProcessSearch path="search" />
         <RecipeOTD path="recipeOfTheDay" />
+        <SearchResults path="searchResults" />
       </Router>
       <Footer />
     </div>

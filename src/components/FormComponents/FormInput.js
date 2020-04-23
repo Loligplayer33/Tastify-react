@@ -12,11 +12,7 @@ function InputField({ HtmlFor, label }) {
       <label className={s.label} htmlFor={HtmlFor}>
         {label}
       </label>
-      <input
-        className={s.input}
-        type={HtmlFor}
-        // onKeyDown={(e) => setEmail(e.target.value)}
-      />
+      <input className={s.input} type={HtmlFor} />
     </div>
   );
 }
