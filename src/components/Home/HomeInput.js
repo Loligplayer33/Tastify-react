@@ -15,13 +15,12 @@ function HomeInput({ onSearch }) {
         className={styles.input}
         type="text"
         placeholder="f.e: Pizza, Lasagna, Salad"
-        onKeyPress={(e) => {
+        onKeyUp={(e) => {
           if (e.which === 13) {
             //onSearch fn coming from home.js calling api | term = input-query
-            onSearch(term);
+            onSearch(e.target.value);
             removeTextContent(e);
           } else {
-            // otherwise update state accordingly to input
             setTerm(e.target.value);
           }
         }}
@@ -32,6 +31,7 @@ function HomeInput({ onSearch }) {
         className={`${styles.icon} fas fa-search fa-2x`}
         onClick={(e) => {
           //onSearch fn coming from home.js calling api | term = input query
+          // TODO state is always one letter behind pizza => pizz
           onSearch(term);
           removeTextContent(e);
         }}

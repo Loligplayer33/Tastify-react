@@ -1,11 +1,18 @@
 import React from 'react';
-import SearchResults from './SearchResults';
+import s from './searchResultsCard.module.scss';
 
-function SearchResultsCard() {
+function SearchResultsCard({ title, imgUrl }) {
   return (
-    <>
-      <h1>test</h1>
-    </>
+    <div className={s.cardContainer}>
+      <div className={s.imgContainer}>
+        <img className={s.img} src={imgUrl} alt="recipe card" />
+      </div>
+      <p className={s.categories}>
+        {/* TODO set correct category */}
+        Breakfast / Seasonal
+      </p>
+      <h2 className={s.recipeName}>{title}</h2>
+    </div>
   );
 }
 

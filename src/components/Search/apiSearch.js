@@ -5,7 +5,7 @@ import axios from 'axios';
 const BASE_URL = 'https://api.spoonacular.com/recipes/search';
 const apiKey = '5e5c37bdaec64ebb8bb2f7feb9b6ff27';
 const instructionRequired = 'true';
-const recipeAmount = '20';
+const recipeAmount = '18';
 
 async function getResults(term) {
   try {

@@ -35,31 +35,33 @@ function NavInput({ onSearch }) {
     <div className="nav__search-container">
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <i
+        // TODO setTerm is always one character behind f.e: pizza => pizz
         className="nav__search fas fa-search fa-2x"
         onKeyPress={(e) => {
           isClicked(e);
-          onSearch(term);
-          removeTextContent(e);
+          if (term !== '' || undefined) onSearch(term);
+          setTerm('');
         }}
         onClick={(e) => {
           isClicked(e);
-          onSearch(term);
-          removeTextContent(e);
+          if (term !== '' || undefined) onSearch(term);
+          setTerm('');
         }}
         onBlur={(e) => {
           isClicked(e);
-          onSearch(term);
-          removeTextContent(e);
+          if (term !== '' || undefined) onSearch(term);
+          setTerm('');
         }}
       />
       <input
         className="nav__toggle-search input-field"
         type="text"
         placeholder="f.e: Pizza, Lasagna, Salad"
-        onKeyPress={(e) => {
+        onKeyUp={(e) => {
           if (e.which === 13) {
-            onSearch(term);
+            onSearch(e.target.value);
             removeTextContent(e);
+            setTerm('');
           } else {
             setTerm(e.target.value);
           }
