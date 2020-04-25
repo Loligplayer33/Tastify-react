@@ -4,7 +4,6 @@ import styles from './home.module.scss';
 import { navigate } from '@reach/router';
 import React from 'react';
 
-// import ProcessSearch from '../Search/ProcessSearch';
 import HomeInput from './HomeInput';
 import RecipeCard from './RecipeCard';
 import cardContent from '../StaticData/DataHome';

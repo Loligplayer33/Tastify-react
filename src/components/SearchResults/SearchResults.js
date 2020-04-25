@@ -19,10 +19,6 @@ function SearchResults(props) {
     getApiResults();
   }, [searchQuery]);
 
-  // // console.log(results);
-  // let tmp = Object.entries(results).map((cur) => console.log(cur[1]));
-  // // console.log(typeof tmp);
-
   return (
     <div className={s.container}>
       <section className={s.recipeResults}>
@@ -30,18 +26,17 @@ function SearchResults(props) {
         <div className={s.grid}>
           {Object.entries(results).map(function displayCards(recipe) {
             let modifiedTitle;
-            // TODO come back to set exact num
             if (recipe[1].title.length > 18) {
               modifiedTitle = recipe[1].title.slice(0, 18) + '...';
             } else {
               modifiedTitle = recipe[1].title;
             }
-
             return (
               <Card
                 title={modifiedTitle}
                 imgUrl={recipe[1].image}
                 key={recipe[1].title.replace(' ', '').toLowerCase()}
+                id={recipe[1].id}
               />
             );
           })}

@@ -37,18 +37,18 @@ function NavInput({ onSearch }) {
       <i
         // TODO setTerm is always one character behind f.e: pizza => pizz
         className="nav__search fas fa-search fa-2x"
-        onKeyPress={(e) => {
-          isClicked(e);
+        onKeyPress={() => {
+          isClicked();
           if (term !== '' || undefined) onSearch(term);
           setTerm('');
         }}
-        onClick={(e) => {
-          isClicked(e);
+        onClick={() => {
+          isClicked();
           if (term !== '' || undefined) onSearch(term);
           setTerm('');
         }}
-        onBlur={(e) => {
-          isClicked(e);
+        onBlur={() => {
+          isClicked();
           if (term !== '' || undefined) onSearch(term);
           setTerm('');
         }}
@@ -59,6 +59,7 @@ function NavInput({ onSearch }) {
         placeholder="f.e: Pizza, Lasagna, Salad"
         onKeyUp={(e) => {
           if (e.which === 13) {
+            isClicked();
             onSearch(e.target.value);
             removeTextContent(e);
             setTerm('');
