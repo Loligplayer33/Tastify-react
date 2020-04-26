@@ -1,0 +1,90 @@
+@import '../../scss/utilities';
+@import '../../scss/reset';
+
+.container {
+  max-width: 70vw;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.headerLead {
+  margin: 4rem;
+  margin-bottom: 6rem;
+}
+
+.heading {
+  font-size: 7rem;
+  font-weight: 100;
+  font-family: $font-family-special;
+}
+
+.categoryColor {
+  color: $btn-color-secondary;
+  font-weight: bold;
+}
+
+.categories {
+  padding: 1rem;
+  padding-top: 2rem;
+  font-size: 1.7rem;
+}
+
+.img {
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+}
+
+.recipeInfo {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentHolder {
+  margin: 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  &Heading {
+    font-family: $font-family-special;
+    font-size: 3rem;
+    font-weight: 100;
+  }
+
+  &Content {
+    font-size: 1.9rem;
+    padding: 1rem;
+    color: $btn-color-secondary;
+  }
+}
+
+.servingsInput {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 70px;
+  height: 35px;
+  font-weight: 100;
+  font-size: 1.9rem;
+  font-family: $font-family-main;
+  border: 2px solid rgba(128, 128, 128, 0.596);
+  opacity: 1;
+  text-align: center;
+  transition: all, 0.2s ease-in-out;
+
+  &:hover {
+    border-color: $btn-color-secondary;
+  }
+
+  &:focus {
+    font-size: 1.9rem;
+    font-weight: 100;
+    font-family: $font-family-main;
+  }
+}
