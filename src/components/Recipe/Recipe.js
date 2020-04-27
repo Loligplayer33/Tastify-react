@@ -16,11 +16,11 @@ function Recipe({ id }) {
       setRecipe(recipeData.data);
     }
     getApiResults();
-    console.log(recipe);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  // TODO make sure that works tomorrow (to many requests for today)
+  console.log(recipe);
+
   if (recipe === undefined) {
     return <h1>Loading...</h1>;
   } else if (recipe !== undefined) {
@@ -41,6 +41,8 @@ function Recipe({ id }) {
                   return ` ${cuisine} / `;
                 } else if (index === 2) {
                   return ` ${cuisine}`;
+                } else if (recipe.cuisines.length === 0) {
+                  return ' no recipes defined';
                 }
               })}
             </p>
@@ -52,12 +54,16 @@ function Recipe({ id }) {
         <aside className={s.recipeInfo}>
           <div className={s.contentHolder}>
             <h3 className={s.infoHeading}>Preparation</h3>
-            <p className={s.infoContent}>{recipe.preparationMinutes}</p>
+            <p className={s.infoContent}>
+              {!recipe.preparationMinutes ? '0' : recipe.preparationMinutes}
+            </p>
           </div>
 
           <div className={s.contentHolder}>
             <h3 className={s.infoHeading}>Cook</h3>
-            <p className={s.infoContent}>{recipe.readyInMinutes}</p>
+            <p className={s.infoContent}>
+              {!recipe.readyInMinutes ? '0' : recipe.readyInMinutes}
+            </p>
           </div>
 
           <div className={s.contentHolder}>
@@ -74,9 +80,10 @@ function Recipe({ id }) {
             />
           </div>
         </aside>
-        {/* <div className={s.recInfoContainer}>
-          <section className={s.ingredients}></section>
-        </div> */}
+        <div className={s.recInfoContainer}>
+          <aside className={s.ingredientsContainer}></aside>
+          <section className={s.instructionsContainer}></section>
+        </div>
       </div>
     );
   }
