@@ -29,7 +29,6 @@ function Recipe({ id }) {
         <header className={s.header}>
           <div className={s.headerLead}>
             <h1 className={s.heading}>
-              {/* hier z.b ist recipe.title noch undefined */}
               {recipe.title.length > 50
                 ? recipe.title.slice(0, 50) + '...'
                 : recipe.title}

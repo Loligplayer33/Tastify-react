@@ -8,7 +8,7 @@ import NavInput from './NavInput';
 function Navbar() {
   async function onSearch(term) {
     if (term !== '' || undefined) {
-      navigate(`searchResults?term=${term}`);
+      navigate(`/searchResults?term=${term}`);
     }
   }
 
