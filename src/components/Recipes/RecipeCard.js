@@ -11,9 +11,7 @@ function RecipeCard({ title }) {
       </div>
       <div className={s.text}>
         <div className={s.textWrap}>
-          {/* TODO add correct Title */}
           <h2 className={s.title}>{title}</h2>
-          {/* TODO add correct category */}
           <p className={s.category}>Test</p>
         </div>
       </div>

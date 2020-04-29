@@ -31,7 +31,6 @@ function HomeInput({ onSearch }) {
         className={`${styles.icon} fas fa-search fa-2x`}
         onClick={(e) => {
           //onSearch fn coming from home.js calling api | term = input query
-          // TODO state is always one letter behind pizza => pizz
           onSearch(term);
           removeTextContent(e);
         }}

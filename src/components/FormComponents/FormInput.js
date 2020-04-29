@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './formComponents.module.scss';
 
-// TODO make email valitdatio work
+// TODO make email valitdation work
 // import { useState } from 'react';
 
 function InputField({ HtmlFor, label }) {

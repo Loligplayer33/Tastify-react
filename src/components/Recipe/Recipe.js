@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import getRecipe from '../Search/apiRecipe';
-import InstructionCard from './InstructionCard';
+import Ingredients from './RecipeComponents/Ingredients';
+import Instructions from './RecipeComponents/Instructions';
 
 import s from './recipe.module.scss';
 
@@ -20,29 +22,7 @@ function Recipe({ id }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  function makeKey(string) {
-    return string.replace(' ', '').toLowerCase();
-  }
-
-  // getting amount per person per ingr. and return
-  function formatIngredient(name, amount, unit) {
-    const ingredientAmoutPerPerson = amount / recipe.servings;
-
-    return `${Math.round(ingredientAmoutPerPerson * servings)} ${unit} ${name}`;
-  }
-
-  // passing the ingredients needed into InstructionCard.js
-  function returnInstructionPerIngredient(ingredients) {
-    if (ingredients.length !== 0) {
-      return ingredients.map(function returnIngredientName(ingredient) {
-        return [...ingredient.name];
-      });
-    } else {
-      return 'no ingredients needed for this step';
-    }
-  }
-
-  console.log(recipe);
+  // console.log(recipe);
 
   // make sure that render doesn't start before api returned
   if (recipe === undefined) {
@@ -105,49 +85,10 @@ function Recipe({ id }) {
           </div>
         </aside>
         <div className={s.recInfoContainer}>
-          <aside className={s.ingredientsContainer}>
-            <h3 className={s.recipeHeading}>Ingredients</h3>
-            <div className={s.ingredientsList}>
-              <ul className={s.ingredientsUl}>
-                {/* render ingredient amount based on servings */}
-                {recipe.extendedIngredients.map((ingredient) => {
-                  Math.round(ingredient.measures.metric.amount);
-
-                  return (
-                    <li
-                      className={s.individualIngredient}
-                      key={makeKey(ingredient.name)}
-                    >
-                      {formatIngredient(
-                        ingredient.name,
-                        ingredient.measures.metric.amount,
-                        ingredient.measures.metric.unitShort
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </aside>
-          <section className={s.instructionsContainer}>
-            <h3 className={s.recipeHeading}>Instructions</h3>
-            <div className={s.instructionInnerContainer}>
-              {recipe.analyzedInstructions[0].steps.map(
-                function renderIntructionCard(instruction) {
-                  return (
-                    <InstructionCard
-                      number={instruction.number}
-                      instruction={instruction.step}
-                      ingredients={returnInstructionPerIngredient([
-                        ...instruction.ingredients,
-                      ])}
-                      key={instruction.number}
-                    />
-                  );
-                }
-              )}
-            </div>
-          </section>
+          {/* Ingredients list component */}
+          <Ingredients recipe={recipe} servings={servings} />
+          {/* Instructions list component */}
+          <Instructions recipe={recipe} />
         </div>
       </div>
     );
