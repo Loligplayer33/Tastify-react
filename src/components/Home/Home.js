@@ -34,6 +34,7 @@ function Home() {
           content={cardContent.recipesTxt}
           heading={cardContent.recipesHeading}
           btnContent="Browse recipes"
+          cardNumber="1"
         />
         <RecipeCard
           img={imgRecipeOTD}
@@ -41,6 +42,7 @@ function Home() {
           content={cardContent.pickOfTheDayTxt}
           heading={cardContent.recipeOTDHeading}
           btnContent="Take a look"
+          cardNumber="2"
         />
         <RecipeCard
           img={imgInspiration}
@@ -48,6 +50,7 @@ function Home() {
           content={cardContent.inspirationTxt}
           heading={cardContent.inspirationHeading}
           btnContent="Get inspiration"
+          cardNumber="3"
         />
       </div>
     </div>
