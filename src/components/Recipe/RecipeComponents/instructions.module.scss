@@ -1,2 +1,21 @@
 @import '../../../scss/utilities';
 @import '../../../scss/reset';
+
+.instructionsContainer {
+  flex: 2;
+  text-align: center;
+  margin-left: 3rem;
+}
+
+.heading {
+  font-size: 1.9rem;
+  color: $btn-color-secondary;
+  margin-bottom: 3rem;
+}
+
+.instructionsInnerContainer {
+  // clear text align
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}

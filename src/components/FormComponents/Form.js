@@ -16,7 +16,6 @@ function Form({ place }) {
         <DeterminePurpose place={place} />
       </form>
       <Submit place={place} />
-      <Submit place={place} />
     </div>
   );
 }

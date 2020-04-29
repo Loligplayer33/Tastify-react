@@ -12,12 +12,12 @@ function Instructions({ recipe }) {
       });
     }
     // only show needed ingredients
-    return 'no ingredient needed for this step';
+    return 'no ingredient needed for this step 🌶️';
   }
 
   return (
     <section className={s.instructionsContainer}>
-      <h3 className={s.recipeHeading}>Instructions</h3>
+      <h3 className={s.heading}>Instructions</h3>
       <div className={s.instructionInnerContainer}>
         {recipe.analyzedInstructions[0].steps.map(function renderIntructionCard(
           instruction

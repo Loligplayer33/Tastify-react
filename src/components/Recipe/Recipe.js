@@ -19,10 +19,7 @@ function Recipe({ id }) {
       setServings(recipeData.data.servings);
     }
     getApiResults();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-
-  // console.log(recipe);
 
   // make sure that render doesn't start before api returned
   if (recipe === undefined) {
@@ -84,7 +81,7 @@ function Recipe({ id }) {
             />
           </div>
         </aside>
-        <div className={s.recInfoContainer}>
+        <div className={s.recipeInfoContainer}>
           {/* Ingredients list component */}
           <Ingredients recipe={recipe} servings={servings} />
           {/* Instructions list component */}

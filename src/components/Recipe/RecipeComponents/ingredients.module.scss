@@ -1,2 +1,42 @@
 @import '../../../scss/utilities';
 @import '../../../scss/reset';
+
+.ingredientsContainer {
+  flex: 1;
+  // position heading in center
+  text-align: center;
+}
+
+.heading {
+  font-size: 1.9rem;
+  color: $btn-color-secondary;
+  margin-bottom: 3rem;
+}
+
+.ingredientsList {
+}
+
+.ingredientsUl {
+  text-align: left;
+  // remove default list style
+  list-style: none;
+  font-size: 1.7rem;
+}
+
+.individualIngredient {
+  padding: 1rem 0;
+  line-height: 1.5;
+
+  // bullet point styling
+  &::before {
+    // unicode for bullet point
+    content: '\2022';
+    color: $btn-color-secondary;
+    font-weight: bold;
+    display: inline-block;
+    width: 2em;
+    margin-left: -1em;
+    font-size: 25px;
+    opacity: 0.6;
+  }
+}

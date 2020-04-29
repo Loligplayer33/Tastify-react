@@ -16,7 +16,7 @@ function Ingredients({ recipe, servings }) {
 
   return (
     <aside className={s.ingredientsContainer}>
-      <h3 className={s.recipeHeading}>Ingredients</h3>
+      <h3 className={s.heading}>Ingredients</h3>
       <div className={s.ingredientsList}>
         <ul className={s.ingredientsUl}>
           {/* render ingredient amount based on servings */}
