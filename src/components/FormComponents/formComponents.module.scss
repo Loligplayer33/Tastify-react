@@ -58,7 +58,7 @@
   border: 1px solid gray;
   background-color: #48646bee;
   height: 60px;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   padding: 0.5rem;
   color: $background-color-light;
   opacity: 1;
@@ -83,6 +83,9 @@
 }
 
 .textarea {
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: #fafafa;
   background-color: #48646bee;
   width: 210%;
 }

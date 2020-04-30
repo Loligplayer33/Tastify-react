@@ -12,6 +12,7 @@ function Recipe({ id }) {
     recipe === undefined ? 6 : recipe.servings
   );
 
+  // get recipe information from spoonacular api
   useEffect(() => {
     async function getApiResults() {
       const recipeData = await getRecipe(id);
@@ -56,14 +57,14 @@ function Recipe({ id }) {
           <div className={s.contentHolder}>
             <h3 className={s.infoHeading}>Preparation</h3>
             <p className={s.infoContent}>
-              {!recipe.preparationMinutes ? '0' : recipe.preparationMinutes}
+              {!recipe.preparationMinutes ? '--' : recipe.preparationMinutes}
             </p>
           </div>
 
           <div className={s.contentHolder}>
             <h3 className={s.infoHeading}>Cook</h3>
             <p className={s.infoContent}>
-              {!recipe.readyInMinutes ? '0' : recipe.readyInMinutes}
+              {!recipe.readyInMinutes ? '--' : recipe.readyInMinutes}
             </p>
           </div>
 

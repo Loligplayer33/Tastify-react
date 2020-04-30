@@ -7,7 +7,14 @@ function Ingredients({ recipe, servings }) {
   function formatIngredient(name, amount, unit) {
     const ingredientAmoutPerPerson = amount / recipe.servings;
 
-    return `${Math.round(ingredientAmoutPerPerson * servings)} ${unit} ${name}`;
+    return `
+      
+      ${
+        ingredientAmoutPerPerson * servings < 5
+          ? (ingredientAmoutPerPerson * servings).toFixed(1)
+          : Math.round(ingredientAmoutPerPerson * servings)
+      } ${unit} ${name}
+       `;
   }
 
   function makeKey(string) {
@@ -21,8 +28,8 @@ function Ingredients({ recipe, servings }) {
         <ul className={s.ingredientsUl}>
           {/* render ingredient amount based on servings */}
           {recipe.extendedIngredients.map((ingredient) => {
-            Math.round(ingredient.measures.metric.amount);
-
+            var roundedAmount = ingredient.measures.metric.amount;
+            console.log(roundedAmount);
             return (
               <li
                 className={s.individualIngredient}
@@ -30,7 +37,7 @@ function Ingredients({ recipe, servings }) {
               >
                 {formatIngredient(
                   ingredient.name,
-                  ingredient.measures.metric.amount,
+                  roundedAmount,
                   ingredient.measures.metric.unitShort
                 )}
               </li>
