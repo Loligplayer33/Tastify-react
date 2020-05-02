@@ -29,7 +29,6 @@ function Ingredients({ recipe, servings }) {
           {/* render ingredient amount based on servings */}
           {recipe.extendedIngredients.map((ingredient) => {
             var roundedAmount = ingredient.measures.metric.amount;
-            console.log(roundedAmount);
             return (
               <li
                 className={s.individualIngredient}
