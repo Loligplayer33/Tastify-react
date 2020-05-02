@@ -2,17 +2,32 @@
 import styles from './home.module.scss';
 
 import { navigate } from '@reach/router';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import HomeInput from './HomeInput';
 import RecipeCard from './RecipeCard';
 import cardContent from '../StaticData/DataHome';
+import apiGetRandomRecipe from '../Search/apiGetRandomRecipes';
 
 import imgRecipe from '../../assets/home-a__recipe.jpg';
-import imgRecipeOTD from '../../assets/home-a__recipe-of-the-day.jpg';
 import imgInspiration from '../../assets/home-a__inspiration.jpg';
 
 function Home() {
+  var [recipeOTD, setRecipeOTD] = useState({});
+
+  // get recipe of the day on start
+  useEffect(() => {
+    async function getRecipeOTD() {
+      const recipeOTD = await apiGetRandomRecipe(1);
+      // remove unimportant data
+      setRecipeOTD(recipeOTD.data.recipes[0]);
+    }
+
+    getRecipeOTD();
+  }, []);
+
+  console.log(recipeOTD);
+
   async function onSearch(term) {
     if (term !== '' || undefined) {
       navigate(`searchResults?term=${term}`);
@@ -37,10 +52,10 @@ function Home() {
           cardNumber="1"
         />
         <RecipeCard
-          img={imgRecipeOTD}
-          link={cardContent.linkToRecipeOTD}
+          img={recipeOTD.image}
           content={cardContent.pickOfTheDayTxt}
           heading={cardContent.recipeOTDHeading}
+          id={recipeOTD.id}
           btnContent="Take a look"
           cardNumber="2"
         />

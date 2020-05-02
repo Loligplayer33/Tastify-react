@@ -12,7 +12,7 @@ function Form({ place }) {
       <form className={s.form}>
         <InputField HtmlFor="name" label="First Name*" />
         <InputField HtmlFor="name" label="Last Name*" />
-        <InputField HtmlFor="email" label="Email - Adress*" />
+        <InputField HtmlFor="email" label="Email - Address*" />
         <DeterminePurpose place={place} />
       </form>
       <Submit place={place} />

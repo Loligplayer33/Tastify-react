@@ -24,7 +24,11 @@ function Recipe({ id }) {
 
   // make sure that render doesn't start before api returned
   if (recipe === undefined) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className={s.loaderContainer}>
+        <h1 className={s.loader}>Loading...</h1>
+      </div>
+    );
   } else if (recipe !== undefined) {
     return (
       <div className={s.container}>
@@ -44,9 +48,9 @@ function Recipe({ id }) {
                 } else if (index === 2) {
                   return ` ${cuisine}`;
                 } else if (recipe.cuisines.length === 0) {
-                  return ' no recipes defined';
+                  return '-- 😶';
                 }
-                return '';
+                return '-- 😶';
               })}
             </p>
             <div className={s.imgContainer}>

@@ -42,7 +42,7 @@ function Nutrients({ recipe }) {
               renderMultipleElements(name, index, array)
             );
       }
-      return 'no information given 🤯';
+      return `${label} no information given 🤯`;
     } else if (typeof info === 'string' || typeof info === 'number') {
       return info !== '' && info !== 0
         ? `${label} ${info}`
@@ -50,13 +50,12 @@ function Nutrients({ recipe }) {
     } else if (typeof info === 'boolean') {
       return info === true
         ? `this recipe is ${label} 🥦`
-        : `this recipe is not ${label} `;
+        : `this recipe is not ${label} 🧁`;
     }
   }
 
   return (
     <div className={s.nutrientsList}>
-      <div className={s.borderTop}></div>
       <h3 className={s.heading}>Some more information:</h3>
       <ul className={s.ingredientsUl}>
         {NutrientInformation.map(function renderNutrientInfo(

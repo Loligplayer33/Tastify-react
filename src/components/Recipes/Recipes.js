@@ -18,9 +18,12 @@ function Recipes() {
     getRandomRecipes();
   }, []);
 
-  console.log(recipes);
   if (recipes.length === 0) {
-    return <h1 className={s.loader}>Loading...</h1>;
+    return (
+      <div className={s.loaderContainer}>
+        <h1 className={s.loader}>Loading...</h1>
+      </div>
+    );
   } else {
     return (
       <div className={s.container}>

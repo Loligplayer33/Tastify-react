@@ -19,16 +19,18 @@ function InstructionCard({ number, instruction, ingredients }) {
           }
         })}`;
   }
-
-  return (
-    <div className={s.container}>
-      <div className={s.cardContainer}>
-        <h1 className={s.number}>{number}</h1>
-        <h3 className={s.instruction}>{instruction}</h3>
+  if (instruction.length > 20) {
+    return (
+      <div className={s.container}>
+        <div className={s.cardContainer}>
+          <h1 className={s.number}>{number}</h1>
+          <h3 className={s.instruction}>{instruction}</h3>
+        </div>
+        <h3 className={s.ingredients}>{renderIngredient()}</h3>
       </div>
-      <h3 className={s.ingredients}>{renderIngredient()}</h3>
-    </div>
-  );
+    );
+  }
+  return '';
 }
 
 export default InstructionCard;

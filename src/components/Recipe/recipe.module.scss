@@ -1,6 +1,28 @@
 @import '../../scss/utilities';
 @import '../../scss/reset';
 
+.loader {
+  &Container {
+    margin-top: 5rem;
+  }
+  color: white;
+  margin: auto;
+  border-radius: 10px;
+  width: 300px;
+  height: 100px;
+  padding: 2rem 4rem;
+  margin-top: 5rem;
+  margin-bottom: 90vh;
+  width: fit-content;
+  font-size: 3rem;
+  font-family: $font-family-special;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 145, 0, 0.8860586470916492) 0%,
+    rgba(35, 151, 83, 1) 100%
+  );
+}
+
 .container {
   max-width: 70vw;
   margin: auto;

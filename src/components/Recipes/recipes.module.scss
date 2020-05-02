@@ -2,6 +2,9 @@
 @import '../../scss/reset';
 
 .loader {
+  &Container {
+    margin-top: 5rem;
+  }
   color: white;
   margin: auto;
   border-radius: 10px;
