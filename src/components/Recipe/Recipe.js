@@ -37,6 +37,7 @@ function Recipe({ id }) {
             </h1>
             <p className={s.categories}>
               <span className={s.categoryColor}>categories: </span>
+              {/* TODO refactor categories render */}
               {recipe.cuisines.map(function renderCuisines(cuisine, index) {
                 if (index < 2) {
                   return ` ${cuisine} / `;

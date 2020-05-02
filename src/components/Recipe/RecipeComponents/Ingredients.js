@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Nutrients from './Nutrients';
+
 import s from './ingredients.module.scss';
 
 function Ingredients({ recipe, servings }) {
@@ -8,7 +10,6 @@ function Ingredients({ recipe, servings }) {
     const ingredientAmoutPerPerson = amount / recipe.servings;
 
     return `
-      
       ${
         ingredientAmoutPerPerson * servings < 5
           ? (ingredientAmoutPerPerson * servings).toFixed(1)
@@ -44,6 +45,7 @@ function Ingredients({ recipe, servings }) {
           })}
         </ul>
       </div>
+      <Nutrients recipe={recipe} />
     </aside>
   );
 }
