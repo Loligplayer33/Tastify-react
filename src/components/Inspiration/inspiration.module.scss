@@ -1,17 +1,5 @@
 @import '../../scss/utilities';
 
 .container {
-  border: 3px solid red;
-}
-
-.header {
-  color: blue;
-
-  &Small {
-    color: white;
-  }
-}
-
-.test {
-  font-size: 2rem;
+  margin: 5rem;
 }
