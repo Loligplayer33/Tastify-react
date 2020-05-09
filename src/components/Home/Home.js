@@ -26,8 +26,6 @@ function Home() {
     getRecipeOTD();
   }, []);
 
-  console.log(recipeOTD);
-
   async function onSearch(term) {
     if (term !== '' || undefined) {
       navigate(`searchResults?term=${term}`);

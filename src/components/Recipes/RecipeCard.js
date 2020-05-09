@@ -13,7 +13,6 @@ function RecipeCard({ title, imgUrl, id }) {
         <div className={s.text}>
           <div className={s.textWrap}>
             <h2 className={s.title}>{title}</h2>
-            <p className={s.category}>Test</p>
           </div>
         </div>
       </div>
