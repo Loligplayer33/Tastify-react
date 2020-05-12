@@ -8,8 +8,7 @@ function useDropdown(label, defaultOption, options) {
 
   function Dropdown() {
     return (
-      <label htmlFor={id}>
-        {label}
+      <div className={s.selectionContainer}>
         <select
           className={s.select}
           id={id}
@@ -21,16 +20,16 @@ function useDropdown(label, defaultOption, options) {
             setOption(e.target.value);
           }}
         >
-          <option>All</option>
+          <option className={s.option}>{label}</option>
           {options.map(function displayOptions(option) {
             return (
-              <option value={option} key={option}>
+              <option className={s.option} value={option} key={option}>
                 {option}
               </option>
             );
           })}
         </select>
-      </label>
+      </div>
     );
   }
 

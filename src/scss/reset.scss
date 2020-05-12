@@ -30,6 +30,9 @@ input:focus {
 input {
   font-family: $font-family-special;
 }
+button {
+  border: none;
+}
 
 body,
 p {
