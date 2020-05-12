@@ -43,6 +43,7 @@ function Inspiration() {
   } else {
     return (
       <div className={s.container}>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <h1 className={s.heading}>Don't know what to cook?</h1>
         <div className={s.bottomLine}></div>
         {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
