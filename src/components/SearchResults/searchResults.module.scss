@@ -13,8 +13,16 @@
 
 .heading {
   font-size: 4rem;
-  margin: 4.5rem 0 5.5rem 0;
+  margin: 5rem 0 1.5rem 0;
   font-family: $font-family-special;
+}
+
+.bottomLine {
+  margin: auto;
+  margin-bottom: 6rem;
+  width: 13%;
+  height: 5px;
+  border-bottom: 2px solid $btn-color-secondary;
 }
 
 // grid setup

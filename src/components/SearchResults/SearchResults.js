@@ -23,6 +23,7 @@ function SearchResults(props) {
     <div className={s.container}>
       <section className={s.recipeResults}>
         <h1 className={s.heading}>{`Recipes for: „${searchQuery}"`}</h1>
+        <div className={s.bottomLine}></div>
         <div className={s.grid}>
           {Object.entries(results).map(function displayCards(recipe) {
             let modifiedTitle;
@@ -34,9 +35,11 @@ function SearchResults(props) {
             return (
               <Card
                 title={modifiedTitle}
+                // TODO img doesn't display
                 imgUrl={recipe[1].image}
                 key={recipe[1].title.replace(' ', '').toLowerCase()}
                 id={recipe[1].id}
+                readyInMinutes={recipe[1].readyInMinutes}
               />
             );
           })}

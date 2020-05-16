@@ -8,8 +8,6 @@ function SubmitBtn({ place }) {
 
   return (
     <>
-      {/* TODO add email validation (need email state from FormInput.js)
-    Don't know how to pass it down*/}
       <button className={s.button}>{determineBtnContent(place)}</button>
     </>
   );
