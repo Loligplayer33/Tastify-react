@@ -7,6 +7,7 @@ import s from './searchResults.module.scss';
 
 function SearchResults(props) {
   const [results, setResults] = useState({});
+  const [baseUri, setBaseUri] = useState('');
 
   const searchQuery = props.location.search.slice(6);
 
@@ -14,6 +15,7 @@ function SearchResults(props) {
     async function getApiResults() {
       const apiData = await getResults(searchQuery);
       setResults(apiData.data.results);
+      setBaseUri(apiData.data.baseUri);
     }
 
     getApiResults();
@@ -35,7 +37,7 @@ function SearchResults(props) {
             return (
               <Card
                 title={modifiedTitle}
-                // TODO img doesn't display
+                baseUri={baseUri}
                 imgUrl={recipe[1].image}
                 key={recipe[1].title.replace(' ', '').toLowerCase()}
                 id={recipe[1].id}
