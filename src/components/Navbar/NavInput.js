@@ -35,7 +35,6 @@ function NavInput({ onSearch }) {
     <div className="nav__search-container">
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <i
-        // TODO setTerm is always one character behind f.e: pizza => pizz
         className="nav__search fas fa-search fa-2x"
         onKeyPress={() => {
           isClicked();

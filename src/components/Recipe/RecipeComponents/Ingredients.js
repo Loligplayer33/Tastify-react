@@ -19,7 +19,7 @@ function Ingredients({ recipe, servings }) {
   }
 
   function makeKey(string) {
-    return string.replace(' ', '').toLowerCase();
+    return `${string.replace(' ', '').toLowerCase()}${Math.random()}`;
   }
 
   return (

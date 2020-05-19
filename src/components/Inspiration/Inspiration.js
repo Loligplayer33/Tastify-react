@@ -3,31 +3,31 @@ import s from './inspiration.module.scss';
 
 import apiSearchByNutrients from '../Search/apiSearchByNutrients';
 import apiSearchRandomRecipe from '../Search/apiGetRandomRecipes';
+import RecipeRender from './InspirationRecipeRender';
 import Options from '../StaticData/DataInspiration';
 import useDropdown from './useDropdown';
-import RecipeCard from '../Recipes/RecipeCard';
 
 function Inspiration() {
-  var [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   var [cuisine, CuisineDropdown] = useDropdown('Cuisine', '', Options.cuisines);
   var [diet, DietDropdown] = useDropdown('Diet', '', Options.diets);
   var [type, TypeDropdown] = useDropdown('Type', '', Options.types);
 
   async function getCorrectApiSearch() {
     if ([...cuisine, ...diet, ...type].length === 0) {
+      console.log('i run');
       const recipes = await apiSearchRandomRecipe(16);
       setData(recipes.data.results);
+      console.log(recipes, data);
     } else {
       const recipes = await apiSearchByNutrients(cuisine, diet, type);
       setData(recipes.data.results);
       console.log(recipes);
     }
-    resetHooks();
+    // resetHooks();
   }
 
-  function resetHooks() {}
-
-  console.log(data);
+  // function resetHooks() {}
 
   return (
     <div className={s.container}>
@@ -50,35 +50,17 @@ function Inspiration() {
           Search
         </button>
       </section>
-      {data.length === 0 ? (
+      {data.length === 0 || undefined ? (
         <div className={s.recipePlaceholder}>
           <h1 className={s.recipePlaceholderHeading}>
             Select some options above to find recipes
           </h1>
         </div>
       ) : (
-        <section className={s.recipesContainer}>
-          {data.map(function displayCurrentRecipe(recipe) {
-            return (
-              <RecipeCard
-                title={
-                  recipe.title.length > 13
-                    ? recipe.title.slice(0, 13) + '...'
-                    : recipe.title
-                }
-                imgUrl={recipe.image}
-                id={recipe.id}
-                key={
-                  recipe.title.replace(' ', '').toLowerCase() + Math.random()
-                }
-              />
-            );
-          })}
-        </section>
+        <RecipeRender data={data} />
       )}
     </div>
   );
 }
-// }
 
 export default Inspiration;

@@ -12,7 +12,6 @@ async function getResults(cuisine, diet, type) {
         ''
       )}&number=${recipeAmount}&apiKey=${apiKey}`
     );
-    console.log(data);
     return data;
   } catch (err) {
     console.log(err);

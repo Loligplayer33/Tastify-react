@@ -22,6 +22,13 @@ function Recipe({ id }) {
     getApiResults();
   }, [id]);
 
+  function renderCategories() {
+    return recipe.cuisines.length === 0
+      ? 'no  categories provided 😶'
+      : recipe.cuisines.map(function renderCuisines(cuisine, index, arr) {
+          return arr.length !== index + 1 ? ` ${cuisine},` : ` ${cuisine}`;
+        });
+  }
   // make sure that render doesn't start before api returned
   if (recipe === undefined) {
     return (
@@ -41,17 +48,7 @@ function Recipe({ id }) {
             </h1>
             <p className={s.categories}>
               <span className={s.categoryColor}>categories: </span>
-              {/* TODO refactor categories render */}
-              {recipe.cuisines.map(function renderCuisines(cuisine, index) {
-                if (index < 2) {
-                  return ` ${cuisine} / `;
-                } else if (index === 2) {
-                  return ` ${cuisine}`;
-                } else if (recipe.cuisines.length === 0) {
-                  return '-- 😶';
-                }
-                return '-- 😶';
-              })}
+              {renderCategories()}
             </p>
             <div className={s.imgContainer}>
               <img className={s.img} src={recipe.image} alt="recipe" />

@@ -10,8 +10,6 @@ function InstructionCard({ number, instruction, ingredients }) {
           index
         ) {
           var lastElement = ingredients.length;
-          // TODO comma doesn't work
-          // add trailing comma, if the ingredient is not the only or the last one
           if (index !== lastElement - 1) {
             return `${ingredient.join('')} `;
           } else {
