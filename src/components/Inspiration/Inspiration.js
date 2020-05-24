@@ -14,20 +14,16 @@ function Inspiration() {
   var [type, TypeDropdown] = useDropdown('Type', '', Options.types);
 
   async function getCorrectApiSearch() {
-    if ([...cuisine, ...diet, ...type].length === 0) {
-      console.log('i run');
+    if (!cuisine && !diet && !type) {
       const recipes = await apiSearchRandomRecipe(16);
-      setData(recipes.data.results);
-      console.log(recipes, data);
+      console.log(recipes);
+      setData(recipes.data.recipes);
     } else {
       const recipes = await apiSearchByNutrients(cuisine, diet, type);
       setData(recipes.data.results);
       console.log(recipes);
     }
-    // resetHooks();
   }
-
-  // function resetHooks() {}
 
   return (
     <div className={s.container}>

@@ -9,6 +9,8 @@ async function getRandomRecipe(number) {
     const data = await axios.get(
       `${BASE_URL}?number=${number}&limitLicense=${limitLicense}&apiKey=${apiKey}`
     );
+    console.log('i run');
+    console.log(data);
     return data;
   } catch (err) {
     console.log(err);
