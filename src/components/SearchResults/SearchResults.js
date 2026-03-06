@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import getResults from '../Search/apiSearch';
 import Card from './SearchResultsCard';
 
 import s from './searchResults.module.scss';
 
-function SearchResults(props) {
+function SearchResults() {
   const [results, setResults] = useState({});
   const [baseUri, setBaseUri] = useState('');
 
-  const searchQuery = props.location.search.slice(6);
+  const location = useLocation();
+  const searchQuery = new URLSearchParams(location.search).get('term');
 
   useEffect(() => {
     async function getApiResults() {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import getRecipe from '../Search/apiRecipe';
 import Ingredients from './RecipeComponents/Ingredients';
@@ -6,10 +7,11 @@ import Instructions from './RecipeComponents/Instructions';
 
 import s from './recipe.module.scss';
 
-function Recipe({ id }) {
+function Recipe() {
+  const { id } = useParams();
   const [recipe, setRecipe] = useState(undefined);
   const [servings, setServings] = useState(
-    recipe === undefined ? 6 : recipe.servings
+    6
   );
 
   // get recipe information from spoonacular api

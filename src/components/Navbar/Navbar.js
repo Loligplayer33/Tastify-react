@@ -1,11 +1,12 @@
 import './navbar.scss';
 
-import { navigate } from '@reach/router';
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link, useNavigate } from 'react-router-dom';
 import NavInput from './NavInput';
 
 function Navbar() {
+  const navigate = useNavigate();
+
   async function onSearch(term) {
     if (term !== '' || undefined) {
       navigate(`/searchResults?term=${term}`);

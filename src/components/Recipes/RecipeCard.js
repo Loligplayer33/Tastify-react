@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import s from './recipeCard.module.scss';
 
 function RecipeCard({ title, imgUrl, id }) {

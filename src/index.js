@@ -3,8 +3,8 @@ import './scss/reset.scss';
 
 // external Imports
 import React from 'react';
-import { render } from 'react-dom';
-import { Router } from '@reach/router';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // module imports
 import Navbar from './components/Navbar/Navbar';
@@ -21,18 +21,19 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Router>
-        <Home path="/" />
-        <Recipes path="recipes" />
-        <Inspiration path="inspiration" />
-        <Newsletter path="newsletter" />
-        <Connect path="connect" />
-        <SearchResults path="searchResults" />
-        <Recipe path="/recipe/:id" />
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="recipes" element={<Recipes />} />
+        <Route path="inspiration" element={<Inspiration />} />
+        <Route path="newsletter" element={<Newsletter />} />
+        <Route path="connect" element={<Connect />} />
+        <Route path="searchResults" element={<SearchResults />} />
+        <Route path="/recipe/:id" element={<Recipe />} />
+      </Routes>
       <Footer />
     </div>
   );
 }
 
-render(<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<BrowserRouter><App /></BrowserRouter>);

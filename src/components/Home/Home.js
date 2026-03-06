@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import styles from './home.module.scss';
 
-import { navigate } from '@reach/router';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import HomeInput from './HomeInput';
 import RecipeCard from './RecipeCard';
@@ -13,6 +13,7 @@ import imgRecipe from '../../assets/home-a__recipe.jpg';
 import imgInspiration from '../../assets/home-a__inspiration.jpg';
 
 function Home() {
+  const navigate = useNavigate();
   var [recipeOTD, setRecipeOTD] = useState({});
 
   // get recipe of the day on start
